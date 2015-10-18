@@ -17,14 +17,14 @@
   ],
   "author": "Kreozot",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "ast-query": "^1.0.1",
     "escodegen": "^1.7.0",
-    "loader-utils": "^0.2.11"
+    "loader-utils": "^0.2.11",
+    "webpack": "^1.12.2"
   },
   "devDependencies": {
     "mocha": "^2.3.3",
-    "should": "^7.1.0",
-    "webpack": "^1.12.2"
+    "should": "^7.1.0"
   }
 }

@@ -5,6 +5,7 @@ var escodegen = require("escodegen");
 module.exports = function (source) {
 	var query = loaderUtils.parseQuery(this.query);
 	var configKey = query.config || 'callbackLoader';
+	var thisModule = this;
 
 	var functions = this.options[configKey];
 	var functionNames = Object.keys(query).filter(function (key) {
@@ -47,7 +48,7 @@ module.exports = function (source) {
 					throw msg;
 				}
 			});
-			var value = functions[funcName].apply(null, args);
+			var value = functions[funcName].apply(thisModule, args);
 			source = replaceIn(source, node.range[0], node.range[1], value.toString());
 			console.log (source);
 		});
